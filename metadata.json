@@ -1,0 +1,6 @@
+{
+  "name": "OmniVault AI - Document Intelligence Engine",
+  "description": "Master AI Document Intelligence Engine & Vault for Vehicles, Identity, Land & Property, Vital Certificates, and Appliance Warranties with Malayalam/English OCR and renewal automation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with authentication details and preferences",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "LifeAdminItem": {
+      "title": "LifeAdminItem",
+      "description": "A life-admin record, bill, document, event, or reminder owned by a user",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "entry_type": { "type": "string" },
+        "category": { "type": "string" },
+        "document_or_event_name": { "type": "string" },
+        "holder_or_person_name": { "type": "string" },
+        "identification_numbers": { "type": "object" },
+        "financial_details": { "type": "object" },
+        "important_dates": { "type": "object" },
+        "countdown_calculations": { "type": "object" },
+        "user_friendly_summary": { "type": "string" },
+        "action_required": { "type": "string" },
+        "created_at": { "type": "string" },
+        "updated_at": { "type": "string" }
+      },
+      "required": ["userId", "document_or_event_name", "category", "entry_type"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User profile document"
+    },
+    "/users/{userId}/items/{itemId}": {
+      "schema": { "$ref": "#/entities/LifeAdminItem" },
+      "description": "User's personal life-admin records and reminders"
+    }
+  }
+}
